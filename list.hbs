@@ -1,0 +1,27 @@
+<h3> <a class="btn btn-primary" href="/product"> <i class="fa fa-plus"></i> Add new  Article</a> Article list</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Article Name</th>
+            <th>Type</th>
+            <th>Price</th>
+            <th>Rating</th>
+             <th>Warranty_year</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.type}}</td>
+            <td>{{this.price}}</td>
+            <td>{{this.rating}}</td>
+            <td>{{this.warranty}}</td>
+            <td>
+                <a href="/product/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                 <a href="/product/delete/{{this._id}}" onclick="return confirm('Would you want to delete this article ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
